@@ -1,3 +1,32 @@
+var data = {
+  locations:[
+    {
+      "lati":47.852071,
+      "long":-117.371208
+    },
+    {
+      "lati":47.512911,
+      "long":-122.222157
+     },
+     {
+      "lati":61.147709,
+      "long":-149.731852
+     },
+     {
+      "lati":21.011125,
+      "long":-86.907817
+     },
+     {
+      "lati":22.922192,
+      "long":-109.943555
+     },
+     {
+      "lati":33.308346,
+      "long":-111.737387
+     }
+  ]
+}
+
 // Init the start function
 window.onload = function()
 {
@@ -35,9 +64,17 @@ function sucessLocation(pos)
     disableDefaultUI: true,
   });
 
-  // Place a marker at the home point
-  const marker = new google.maps.Marker({
-    position: home,
-    map: map,
-  });
+  // Init all the locations inside of data
+  for (let i = 0; i < data.locations.length; i++)
+  {
+    let loc = { lat: data.locations[i].lati, lng: data.locations[i].long };
+
+    const marker = new google.maps.Marker({
+      position: loc,
+      map: map,
+    });
+  }
+
+
+
 }
