@@ -27,17 +27,6 @@ var data = {
   ]
 }
 
-// Init the start function
-window.onload = function()
-{
-  Start();
-}
-
-function Start()
-{
-  fetch('data.json').then(response => response.json()).then(data => console.log(data));
-}
-
 // First function called by Google
 function initMap() {
   // Asking permission for location and checking browser capability
