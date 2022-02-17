@@ -1,1 +1,4 @@
-# publicrestroomlocator
+# Public Restroom Locator
+This web app is a preliminary proof of concept to launch a mobile app.  This app will locate any nearby public restrooms from a database; each restroom will be rated by users and reviwed.
+
+Public Restroom Locator uses Firebase and Google Map's API.
