@@ -1,30 +1,26 @@
-var data = {
-  locations:[
-    {
-      "lati":47.852071,
-      "long":-117.371208
-    },
-    {
-      "lati":47.512911,
-      "long":-122.222157
-     },
-     {
-      "lati":61.147709,
-      "long":-149.731852
-     },
-     {
-      "lati":21.011125,
-      "long":-86.907817
-     },
-     {
-      "lati":22.922192,
-      "long":-109.943555
-     },
-     {
-      "lati":33.308346,
-      "long":-111.737387
-     }
-  ]
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite'
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBPtH7jVN4wNCKOyUf6p4QfpX3UQXDydZ4",
+  authDomain: "publicrestroomlocator.firebaseapp.com",
+  databaseURL: "https://publicrestroomlocator-default-rtdb.firebaseio.com",
+  projectId: "publicrestroomlocator",
+  storageBucket: "publicrestroomlocator.appspot.com",
+  messagingSenderId: "660860024187",
+  appId: "1:660860024187:web:9439b3959865ffd80eb9de"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const data;
+getLocationData();
+
+async function getLocationData()
+{
+  data = collection(db, 'locations');
+  console.debug(data);
 }
 
 // First function called by Google
@@ -32,16 +28,17 @@ function initMap() {
   // Asking permission for location and checking browser capability
   if (navigator.geolocation)
   {
-      navigator.geolocation.getCurrentPosition(sucessLocation);
+    navigator.geolocation.getCurrentPosition(sucessLocation);
   } else 
   {
-      alert('Your browser does not support location services.')
+    alert('Your browser does not support location services.')
   }
 }
 
 // Sucess function for getting permission, finding lat and long of user, using Google API to init the map
 function sucessLocation(pos)
 {
+  // Get home location
   var lat = pos.coords.latitude;
   var long = pos.coords.longitude;
   const home = { lat: lat, lng: long };
@@ -61,9 +58,7 @@ function sucessLocation(pos)
     const marker = new google.maps.Marker({
       position: loc,
       map: map,
+      icon: 'src/toilet-icon.png'
     });
   }
-
-
-
 }
