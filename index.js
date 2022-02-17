@@ -14,7 +14,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const data;
+const data = {};
 getLocationData();
 
 async function getLocationData()
