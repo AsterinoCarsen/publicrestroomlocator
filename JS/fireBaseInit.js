@@ -1,7 +1,7 @@
 console.debug("Running Firebase Init");
 
 import { initializeApp } from '/firebase/app';
-import { getFirestore, collection, getDocs } from '/firebase/firestore/lite';
+import { getFirestore, collection } from '/firebase/firestore/lite';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBPtH7jVN4wNCKOyUf6p4QfpX3UQXDydZ4",
