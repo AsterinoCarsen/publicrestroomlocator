@@ -1,4 +1,4 @@
-console.debug("is running");
+console.debug("Running Firebase Init");
 
 import { initializeApp } from '/firebase/app';
 import { getFirestore, collection, getDocs } from '/firebase/firestore/lite';
@@ -23,4 +23,5 @@ async function getLocationData()
 {
   data = collection(db, 'locations');
   console.debug(data);
+  mapPoints(data);
 }
