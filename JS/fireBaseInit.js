@@ -1,7 +1,5 @@
-console.debug("Running Firebase Init");
-
-import { initializeApp } from '/firebase/app';
-import { getFirestore, collection } from '/firebase/firestore/lite';
+import { initializeApp } from 'firebase/app';
+import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBPtH7jVN4wNCKOyUf6p4QfpX3UQXDydZ4",
@@ -14,7 +12,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db = getDatabase(app);
 
 const data = {};
 getLocationData();
