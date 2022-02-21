@@ -14,5 +14,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-const data = db.ref();
+const data = ref(db);
 console.log(data);
