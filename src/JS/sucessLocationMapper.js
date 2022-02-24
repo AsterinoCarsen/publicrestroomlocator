@@ -4,8 +4,8 @@ function mapPoints(data)
 
     // Center the map at the home point determined
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 1,
-        center: { lat: 33.451406, lng: -112.094453 },
+        zoom: 10,
+        center: { lat: result[0][0].lati, lng: result[0][0].long },
         disableDefaultUI: true,
     });
 
