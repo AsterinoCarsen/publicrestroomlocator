@@ -1,6 +1,5 @@
 function mapPoints(data)
 {
-    console.log("Plotting map");
     result = Array(data);
 
     // Center the map at the home point determined

@@ -1,6 +1,5 @@
 // First function called by Google
 function initMap() {
-  console.log("Init Map");
   // Asking permission for location and checking browser capability
   if (navigator.geolocation)
   {
