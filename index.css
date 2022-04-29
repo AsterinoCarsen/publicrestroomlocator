@@ -8,16 +8,22 @@ body {
     align-items: center;
 }
 
-.bottom-bar {
+.side-bar {
     position: absolute;
-    bottom: 0px;
-    z-index: 1;
-    min-width: 100vw;
-    height: 200px;
+    z-index: 2;
+
+    min-width: 20vw;
+    min-height: 95vh;
+    border-radius: 15px;
+    overflow: hidden;
+    right: 79%;
+
     background-color: #323433;
 }
 
 #map {
+    position: relative;
     height: 100vh !important;
     width: 100vw !important;
+    z-index: 1;
 }
