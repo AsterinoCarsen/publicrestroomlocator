@@ -19,5 +19,11 @@ function mapPoints(data)
         map: map,
         icon: 'src/toilet-icon.png'
     });
+
+    const listItem = document.createElement("div");
+    listItem.className = 'bth';
+    listItem.innerHTML = i;
+
+    document.getElementById('sidebar-container').append(listItem);
   }
 }
